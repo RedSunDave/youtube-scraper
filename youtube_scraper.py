@@ -22,15 +22,19 @@ def downloadAudio(input_url):
 
 
 def downloadVideo(input_url):
-    # Download a video in the same way
+    # Download a video highest quality
     targetURL = input_url
     downloadVideoOptions = {}
     with youtube_dl.YoutubeDL(downloadVideoOptions) as ydl:
         ydl.download([targetURL])
     return
 
-user_input = input("Input Url: ")
-downloadAudio(user_input)
-#if __name__ == "__main__:":
+user_input = input("Please paste Url: ")
+type_input = input("Enter 1 for Audio, Enter 2 for Video: ")
+
+if type_input == "1":
+    downloadAudio(user_input)
+else:
+    downloadVideo(user_input)
     
 
